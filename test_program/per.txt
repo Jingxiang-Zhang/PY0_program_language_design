@@ -1,0 +1,6 @@
+
+import "perfect.txt"
+
+for i in range(2,1000):
+	if perfect_fun(i):
+		print("perfect value: {}\n", i)

@@ -1,0 +1,63 @@
+#Grammar for my programming language py0	
+#This content is consulted from python's grammar, due to the difficulties that compose a wholly new grammar from the scratch without unexpected bug.
+#The entire grammar is not object orientated.
+
+
+#Start symbols for the  grammar: 
+#    file_input: a sequence of commands read from a file
+
+#NEWLINE is refer to line feed
+#ENDMARKER is refer to the end of the file
+
+#1. the start of the input
+<file_input> := (NEWLINE | <stmt>)* ENDMARKER
+
+#2. statement and simple statement
+<stmt> := <simple_stmt> | <compound_stmt>
+<simple_stmt> := <small_stmt> NEWLINE
+<small_stmt> := (<del_stmt> | <expr_stmt> | <pass_stmt> | <flow_stmt> | <import_stmt>)
+
+<expr_stmt> := <or_test> | (NAME ((<augassign> <or_test>) | ('=' <or_test>)))
+<augassign> := ('+=' | '-=' | '*=' | '/=')
+
+<del_stmt> := 'del' NAME
+<pass_stmt> := 'pass'
+<flow_stmt> := <break_stmt> | <continue_stmt> | <return_stmt>
+<break_stmt> := 'break'
+<continue_stmt> := 'continue'
+<return_stmt> := 'return' or_test
+<import_stmt> := 'import' ( STRING | NAME )
+
+
+#3. compound statement
+<compound_stmt> := <if_stmt> | <while_stmt> | <for_stmt> | <funcdef>
+<if_stmt> := 'if' <or_test> ':' <suite> ('elif' <or_test> ':' <suite>)*['else' ':' <suite>]
+<while_stmt> := 'while' <or_test> ':' <suite>
+<for_stmt> := 'for' NAME 'in' <or_test> ':' <suite>
+
+<suite> := NEWLINE INDENT <file_input> DEDENT
+<funcdef> := 'def' NAME <parameters> ':' <suite>
+<parameters> := '(' [typedargslist] ')'
+<typedargslist> := NAME (',' NAME )*
+
+
+<or_test> := <and_test> ('or' <and_test>)*
+<and_test> := <not_test> ('and' <not_test>)*
+<not_test>:= ['not'] <comparison>
+<comparison> := <expr> [<comp_op> <expr>]
+
+<comp_op> := '<' | '>' | '==' | '>=' | '<='
+<expr> := <term> (('+'|'-') <term>)*
+<term> := <factor> (('*' | '/') <factor>)*
+<factor> ::= <atom> <trailer>*
+<atom> := <atom_base>  | <array> | '(' or_test ')'
+<atom_base> := NAME | NUMBER | STRING
+<array> := '(' <or_test> (',' <or_test>)* ')'
+
+<trailer> := '(' [<arglist>] ')' | '[' <subscript> ']'
+<subscript> := <or_test>
+<arglist> := <or_test> (',' <or_test>)*
+
+
+
+

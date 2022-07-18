@@ -1,0 +1,86 @@
+reserved word: 
+	and	break	continue	def	del
+	elif	else	for	if	import	
+	in	not	or	pass	print
+	return	while
+						
+punctuation:
+	,	=	+=	-=	*=
+	/=	:	<	>	==	
+	>=	<=	!=	+	-	
+	*	/	%	//	.	
+
+
+control:
+	NEWLINE		ENDMARKER	INDENT		DEDENT
+
+type:
+	NAME		STRING		NUMBER
+	
+return type list:
+	type of word.symbol + value
+	type of word: reserved word | punctuation | control | type
+
+
+word_reserved:
+null,0
+and,1
+break,2	
+continue,3
+def,4
+del,5
+elif,6	
+else,7	
+for,8	
+if,9	
+import,10		
+in,11
+not,12	
+or,13
+pass,14	
+print,15
+return,16
+while,17
+
+word_punctuation:
+comma,20
+aassign,21
+add_equal,22
+minus_equal,23
+multi_equal,24
+div_equal,25
+colon,26
+less,27
+more,28
+equal,29
+less_equal,30
+more_equal,31
+not_equal,32
+add,33
+minus,34
+multi,35
+div,36
+remainder,37
+div_ceil,38
+period,39
+
+
+word_type:
+NAME,50
+STRING,51
+NUMBER,52
+
+
+word_control:
+NEWLINE,60
+ENDMARKER,61
+INDENT,62
+DEDENT,63
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+show_table()
+def perfect_fun(n):
+	s = n
+	for i in range(1, n):
+		t = n / i
+		if n == t * i:
+			s -= i
+	if s == 0:
+		return 1
+	else:
+		return 0
