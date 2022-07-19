@@ -80,7 +80,7 @@ One of the most basic modules. It doesn't call any other modules, and almost all
 It does not call any other module, used to display error information, and gives error handling. It needs to be called by other modules. Due to the limited time, I only made a very brief description of the key errors, and the error report content is relatively simple.
 
 <div align="center">
-  <img src="https://github.com/Jingxiang-Zhang/PY0_program_language_design/blob/main/img/error_msg.png">
+  <img src="https://github.com/Jingxiang-Zhang/PY0_program_language_design/blob/main/img/error_msg.gif">
 </div>
 
 #### Lexical Analysis
@@ -152,5 +152,5 @@ Display the interface and the basic function. This PY0 project has two methods t
 ### Demonstration
 
 <div align="center">
-  <img src="https://github.com/Jingxiang-Zhang/PY0_program_language_design/blob/main/img/demonstration.png">
+  <img src="https://github.com/Jingxiang-Zhang/PY0_program_language_design/blob/main/img/demonstration.gif">
 </div>
